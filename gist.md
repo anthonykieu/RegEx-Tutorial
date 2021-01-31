@@ -4,7 +4,7 @@ Regular expressions (regexes) are a pattern of characters that are used for spec
 
 ## Summary
 
-This gist will focus on how regular expressions can validate the inputs in an email. Here is an example of a regular expression for an email. 
+This gist will focus on how regular expressions can validate the inputs in an email. Here is an example of using a  regular expression to validate the input for an email. 
 
 <center>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</center>
 <br/><br/>
@@ -37,7 +37,8 @@ Quantifiers are characters that specifies how often a preceding element can occu
 - "{min,max}" says that the preceding element must occur a minimum number of times but not more than the max number of times.
 
 In the email expression /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, The "+" quantifier says that the items preceding the "+" (which are the what is in the brackets) can be one and repeated more times.
-The {2,6} quantifier says that the items in the bracket must be at least 2 characters and no more than 6 characters long.
+The {2,6} quantifier says that the items in the bracket must iterate at least twice to generate 2 characters and no more than 6 iterations to generate 6 characters. For example, if "com" is that the end of the email string
+"com" is between 2 and 5 characters and is a letter between a and z so this portion of the expression would pass the input validation.
 ### OR Operator
 The "or" operator "|" allows there to be a choice in matching where the expression matches before or after is acceptable. In this email example, there are no "or" operators.
 ### Character Classes
@@ -64,8 +65,8 @@ Flags are optional arguments that change the meaning of the expression pattern. 
 - "s" flag enables "dotall" to match newline character.
 Flags were not used in the email pattern.
 ### Grouping and Capturing
-Capturing is enclosing portions of a regex pattern with parentheses so that quantifiers can be applied to what is inside the parentheses.
-In the email expression /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, the expression is broken down to ^()@().()$
+Capturing is enclosing portions of a regex pattern with parentheses so actions like quantifiers can be applied to what is inside the parentheses.
+In the email expression /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, the expression can be broken down to ^()@().()$. With capturing, we can easily apply things like quantifiers to what is inside the parentheses.
 ### Bracket Expressions
 Brackets encase a set of characters to match. In the first part of the expression [a-z0-9_\.-], inside the brackets says that a character can be a alphabet from a to z, it can also be a number from 0 to 9, it can be a underscore, or it can be a hyphen.
 The second bracket [\da-z\.-], the characters can be a digit or a letter from a to z, The third bracket [a-z\.], the characters can be a letter from a to z or a dot.
