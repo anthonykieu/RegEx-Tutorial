@@ -1,6 +1,6 @@
 # RegEx Tutorial
 
-Regular expressions (regexes) are a pattern of characters That are used for specific purposes. They are used in algorithims when wanting to search for specific text. They are also used when wanting to validate inputs. Each character in the expression has a specific meaning which is compared to text and determines if the text matches a defined pattern.
+Regular expressions (regexes) are a pattern of characters Ttat are used for specific purposes. They are used in algorithims when wanting to search for specific text. They are also used when wanting to validate inputs. Each character in the expression has a specific meaning which is compared to text and determines if the text matches a defined pattern.
 
 ## Summary
 
